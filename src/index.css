@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    @apply text-[#e5e5e5] bg-[#0a0a0a];
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer components {
+  .sidebar-link {
+    @apply flex items-center gap-3 text-[#a3a3a3] hover:text-white cursor-pointer transition-all duration-300 py-1;
+  }
+  
+  .sidebar-link.active {
+    @apply text-[#d4af37];
+  }
+
+  .stat-card {
+    @apply bg-[#111111] border border-[#262626] p-6 transition-all duration-300;
+  }
+  
+  .dark-btn-primary {
+    @apply px-6 py-2 border border-[#d4af37] text-[#d4af37] text-xs uppercase tracking-widest hover:bg-[#d4af37] hover:text-black transition-all duration-500 font-medium;
+  }
+
+  .dark-table-header {
+    @apply bg-[#0d0d0d] text-[10px] uppercase tracking-widest text-[#555] border-b border-[#262626];
+  }
+
+  .dark-table-row {
+    @apply border-b border-[#1a1a1a] hover:bg-[#151515] transition-colors duration-300;
+  }
+}
